@@ -5,20 +5,73 @@
  */
 package programas;
 
+import java.util.Scanner;
+
 /**
  *
  * @author shelb
  */
 public class Programas {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-       
-       SecuenciaNumerica sn = new SecuenciaNumerica();
-       sn.Fibonacci(60);
-   
+    private static boolean isNumeric(String cadena) {
+        try {
+            Integer.parseInt(cadena);
+            return true;
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
     }
-    
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        SecuenciaNumerica sn = new SecuenciaNumerica();
+        String seleccion;
+        do {
+            System.out.println("***************************");
+            System.out.println("¡Bienvenid@!, ¿qué es lo que desea hacer?");
+            System.out.println("1.- Secuencia de Fibonacci");
+            System.out.println("2.- Sucesión de Padovan");
+            System.out.println("3.- Triángulo de Pascal");
+            System.out.println("4.- Salir");
+            System.out.println("***************************");
+            seleccion = sc.nextLine();
+
+            if (isNumeric(seleccion)) {
+                switch (seleccion) {
+                    case "1":
+                        System.out.println("Ha seleccionado secuencia de Fibonacci, por favor introduzca el límite");
+                        String limite = sc.nextLine();
+                        if (isNumeric(limite)) {
+                            sn.Fibonacci(Integer.parseInt(limite));
+                        } else {
+                            System.err.println("Error de formato, no ha introducido un número");
+                            System.err.println("Lo que introdujo: " + limite);
+                        }
+                        break;
+
+                    case "2":
+                        System.out.println("Ha seleccionado sucesión de Padovan, por favor introduzca el límite");
+                        String lim = sc.nextLine();
+                        if (isNumeric(lim)) {
+                            sn.Padovan(Integer.parseInt(lim));
+                        } else {
+                            System.err.println("Error de formato, no ha introducido un número");
+                            System.err.println("Lo que introdujo: " + lim);
+                        }
+                        break;
+
+                    case "3":
+                        System.out.println("Disponible próximamente");
+                        break;
+                    default:
+                        System.out.println("Ha seleccionado una opcion no válida");
+                }
+            } else {
+                System.err.println("Error de formato, no ha introducido un número");
+            }
+
+        } while (seleccion != "4");
+
+    }
+
 }

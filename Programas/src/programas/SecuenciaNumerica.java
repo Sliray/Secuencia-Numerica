@@ -22,7 +22,7 @@ public class SecuenciaNumerica {
         }
     }
 
-    public void Padavuan(int lim) {
+    public void Padovan(int lim) {
 
         int a = 1, b = 1, c = 1, d;
 
