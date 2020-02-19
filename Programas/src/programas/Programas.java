@@ -37,6 +37,9 @@ public class Programas {
             seleccion = sc.nextLine();
 
             if (isNumeric(seleccion)) {
+                if(seleccion.equals("4")){
+                    break;
+                }else{
                 switch (seleccion) {
                     case "1":
                         System.out.println("Ha seleccionado secuencia de Fibonacci, por favor introduzca el límite");
@@ -63,15 +66,22 @@ public class Programas {
                     case "3":
                         System.out.println("Disponible próximamente");
                         break;
-                    default:
+                   
+                        
+                default:
                         System.out.println("Ha seleccionado una opcion no válida");
                 }
+                }
             } else {
+
                 System.err.println("Error de formato, no ha introducido un número");
             }
+            
 
-        } while (seleccion != "4");
+            }while (seleccion != "4");
+            
+           System.err.println("Saliste del programas");
+
+        }
 
     }
-
-}
