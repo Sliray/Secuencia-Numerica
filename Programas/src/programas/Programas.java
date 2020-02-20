@@ -44,10 +44,11 @@ public class Programas {
                     case "1":
                         System.out.println("Ha seleccionado secuencia de Fibonacci, por favor introduzca el límite");
                         String limite = sc.nextLine();
+                        System.out.println("La secuencia de Fibonacci es:");
                         if (isNumeric(limite)) {
                             sn.Fibonacci(Integer.parseInt(limite));
                         } else {
-                            System.err.println("Error de formato, no ha introducido un número");
+                            System.err.println("Error de formato, solo se permiten números enteros");
                             System.err.println("Lo que introdujo: " + limite);
                         }
                         break;
@@ -55,10 +56,12 @@ public class Programas {
                     case "2":
                         System.out.println("Ha seleccionado sucesión de Padovan, por favor introduzca el límite");
                         String lim = sc.nextLine();
+                        System.out.println("Sucesión de Padovan es:");
+                        
                         if (isNumeric(lim)) {
                             sn.Padovan(Integer.parseInt(lim));
                         } else {
-                            System.err.println("Error de formato, no ha introducido un número");
+                            System.err.println("Error de formato, solo se permiten números enteros");
                             System.err.println("Lo que introdujo: " + lim);
                         }
                         break;
@@ -80,7 +83,7 @@ public class Programas {
 
             }while (seleccion != "4");
             
-           System.err.println("Saliste del programas");
+           System.err.println("Saliste del programa, vuelva pronto :)");
 
         }
 
