@@ -67,7 +67,21 @@ public class Programas {
                         break;
 
                     case "3":
-                        System.out.println("Disponible próximamente");
+                        System.out.println("Ha seleccionado sucesión de Padovan, por favor introduzca el límite");
+                        String l = sc.nextLine();
+                        
+                        
+                        if (isNumeric(l)) {
+                            if (Integer.parseInt(l) <= 150) {
+                                System.out.println("Triangulo de Pascal es:");
+                            sn.TrianguloPascal( Integer.parseInt(l));
+                            } else {
+            System.out.println("Error a excedido el limite");
+        }
+                        } else {
+                            System.err.println("Error de formato, solo se permiten números enteros");
+                            System.err.println("Lo que introdujo: " + l);
+                        }
                         break;
                    
                         
