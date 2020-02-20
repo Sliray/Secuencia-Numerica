@@ -46,12 +46,12 @@ public class SecuenciaNumerica {
         int n = lim;
         
 
-            int[][] matriz = new int[n + 1][];
-            matriz[0] = new int[]{1};
+            long[][] matriz = new long[n + 1][];
+            matriz[0] = new long[]{1};
 
             System.out.println(String.format("%5d", matriz[0][0]));
             for (int k = 1; k < matriz.length; k++) {
-                matriz[k] = new int[k + 1];
+                matriz[k] = new long[k + 1];
                 matriz[k][0] = matriz[k][k] = 1;
                 System.out.print(String.format("%5d", 1));
                 for (int i = 1; i < k; i++) {
